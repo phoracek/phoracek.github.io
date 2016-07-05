@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Petr Horáček &middot; blog</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Petr Horáček">
+<meta name="description" content="Petr Horáček is a guy from Czech Republic, studying at FI MUNI, working in Red Hat on networking part of oVirt. He likes programming, Linux, travelling, livecoding, music, multimedia.">
+
+<title>Petr Horáček</title>
+
+<link href="//blog.phoracek.cz/theme/css/lightbox.css" rel="stylesheet" type="text/css" />
+<link href="//blog.phoracek.cz/theme/css/bootstrap.min.css" rel="stylesheet">
+<link href="//blog.phoracek.cz/theme/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="//blog.phoracek.cz/theme/css/pygments.css" /> 
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href="//blog.phoracek.cz/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Petr Horáček &middot; blog Full Atom Feed" />
+<link href="//blog.phoracek.cz/feeds/linux.atom.xml" type="application/atom+xml" rel="alternate" title="Petr Horáček &middot; blog Categories Atom Feed" />
+
+
+
+<meta name="tags" contents="linux" />
+<meta name="tags" contents="leagueoflegends" />
+<meta name="tags" contents="playonlinux" />
+<meta name="tags" contents="fedora" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-68981346-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</head>
+
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <a href="//blog.phoracek.cz/">
+        <h1 class="col-xs-9">Petr Horáček &middot; blog</h1>
+      </a>
+      <div class="col-xs-3 text-right">
+        <a href="#footer">
+          <button type="button" class="show-menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+<div class="content row">
+
+  <article class="blog-post col-sm-12">
+    <h2 class="blog-post-header">Play League of Legends on Fedora</h2>
+    <div class="blog-post-meta row">
+      <div class="text-left col-sm-10"> 
+        15. 10. 2015
+        &nbsp;
+        #linux
+        #leagueoflegends
+        #playonlinux
+        #fedora
+      </div>
+
+      <div class="text-right col-sm-2"> 
+        
+      </div>
+    </div>
+    <div class="content">
+        <p>Play <strong>League of Legends</strong> on <strong>Fedora 22</strong> via PlayOnLinux. It requires a few
+extra installation steps, but then everything works like a charm. This guide
+describes installation and troubleshooting of common problems.</p>
+<p>Following steps were tested on a blank Fedora 22 virtual machine. It's
+working as well on my ThinkPad T440s with integrated Intel graphics. Verified
+with:</p>
+<pre class="literal-block">
+Kernel: 4.1.10-200.fc22.x86_64
+League of Legends: 5.20
+PlayOnLinux: playonlinux-4.2.9-fedora0.noarch
+Wine: 1.7.52-LeagueOfLegends4 and 1.7.52-LeagueOfLegends5
+</pre>
+<a data-lightbox="image" href="/images/lollauncher.png" title="Game laucher screenshot"><img alt="Game laucher screenshot" class="img-rounded lb-image" src="/images/lollauncher.png" style="width: 100%;"/></a>
+<p><strong>Disclaimer:</strong> Bear in mind that League of Legends is marked as unstable in
+PlayOnLinux and it may break anytime. If this tutorial is not working for
+you, please let me know.</p>
+<div class="section" id="step-by-step">
+<h2>Step by step</h2>
+<p>Install <a class="reference external" href="https://www.playonlinux.com/en/">PlayOnLinux</a> from its repository.</p>
+<div class="highlight"><pre>dnf install http://rpm.playonlinux.com/playonlinux-yum-4-1.noarch.rpm
+dnf install playonlinux
+</pre></div>
+<p>Install 32bit packages (not all of them are needed, but I was too lazy to test
+which ones are).</p>
+<div class="highlight"><pre>dnf install glibc.i686 arts.i686 audiofile.i686 bzip2-libs.i686 <span class="se">\</span>
+cairo.i686 cyrus-sasl-lib.i686 dbus-libs.i686 esound-libs.i686 fltk.i686 <span class="se">\</span>
+freeglut.i686 gtk2.i686 imlib.i686 lcms-libs.i686 lesstif.i686 <span class="se">\</span>
+libacl.i686 libao.i686 libattr.i686 libcap.i686 libdrm.i686 libexif.i686 <span class="se">\</span>
+libgnomecanvas.i686 libICE.i686 libieee1284.i686 libsigc++20.i686 <span class="se">\</span>
+libSM.i686 libtool-ltdl.i686 libusb.i686 libwmf.i686 libwmf-lite.i686 <span class="se">\</span>
+libX11.i686 libXau.i686 libXaw.i686 libXcomposite.i686 libXdamage.i686 <span class="se">\</span>
+libXdmcp.i686 libXext.i686 libXfixes.i686 libxkbfile.i686 libxml2.i686 <span class="se">\</span>
+libXmu.i686 libXp.i686 libXpm.i686 libXScrnSaver.i686 libxslt.i686 <span class="se">\</span>
+libXt.i686 libXtst.i686 libXv.i686 libXxf86vm.i686 <span class="se">\</span>
+lzo.i686 mesa-libGL.i686 mesa-libGLU.i686 nas-libs.i686 cdk.i686 <span class="se">\</span>
+openldap.i686 pam.i686 popt.i686 pulseaudio-libs.i686 <span class="se">\</span>
+sane-backends-libs.i686 SDL.i686 svgalib.i686 unixODBC.i686 zlib.i686 <span class="se">\</span>
+compat-expat1.i686 compat-libstdc++-33.i686 openal-soft.i686 <span class="se">\</span>
+redhat-lsb.i686 alsa-plugins-pulseaudio.i686 alsa-plugins-oss.i686 <span class="se">\</span>
+alsa-lib.i686 nspluginwrapper.i686 libXv.i686 libXScrnSaver.i686 qt.i686 <span class="se">\</span>
+qt-x11.i686 pulseaudio-libs.i686 pulseaudio-libs-glib2.i686 <span class="se">\</span>
+alsa-plugins-pulseaudio.i686
+</pre></div>
+<p><code>libtxc_dxtn</code> lib solves loading screen crash problem. Install it from
+<a class="reference external" href="http://rpmfusion.org/">RPM Fusion</a> repository.</p>
+<div class="highlight"><pre>dnf install http://download1.rpmfusion.org/free/fedora/releases/22/Everything/x86_64/os/rpmfusion-free-release-22-1.noarch.rpm
+dnf install libtxc_dxtn.i686
+</pre></div>
+<p>Now launch <strong>PlayOnLinux</strong>, add a new game (<strong>File → Install</strong>), search for
+<strong>League of Legends</strong>, click <strong>Install</strong>, do what they tell you in installation
+wizard (and do not forget to uncheck "Run League of Legends" when it finishes).</p>
+<p>Start <strong>League of Legends</strong> launcher either from PlayOnLinux or installed
+system icon. Let it download all needed files (don't forget to set your
+language and location).</p>
+<p>Done. Now you have League of Legends installed on your Fedora, ready to start.
+But for sure, first test it inside custom game mode. Enjoy!</p>
+<a data-lightbox="image" href="/images/lolgame.png" title="In-game screenshot"><img alt="In-game screenshot" class="img-rounded lb-image" src="/images/lolgame.png" style="width: 100%;"/></a>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting</h2>
+<p>There are a few difficulties which could occur. All of them are patcher or
+client related and will not influence your in-game experience.</p>
+<div class="section" id="installation-stuck">
+<h3>Installation stuck</h3>
+<p>It may seem like the installation stuck, but it's probably just copying loads
+of data, it can take an hour or two. If you need to see some action, read
+patcher log files:</p>
+<div class="highlight"><pre><span class="nb">cd</span> ~/.PlayOnLinux/wineprefix/LeagueOfLegends/drive_c/Riot<span class="se">\ </span>Games/League<span class="se">\ </span>of<span class="se">\ </span>Legends/Logs/Patcher<span class="se">\ </span>Logs
+tail -f *_LoLPatcher.log
+</pre></div>
+</div>
+<div class="section" id="launcher-did-not-started">
+<h3>Launcher did not started</h3>
+<p>Just try it again.</p>
+</div>
+<div class="section" id="patcher-error">
+<h3>Patcher error</h3>
+<p>Patcher sometimes explode during an update (usually on 33%). Just restart the
+client and it will be OK. This is not Linux specific BTW.</p>
+</div>
+<div class="section" id="right-click">
+<h3>Right click</h3>
+<p>Right click is not working properly in launcher. For right-clicking you have to
+hold right button, click left button and release right button.</p>
+</div>
+<div class="section" id="process-is-still-running-in-background">
+<h3>Process is still running in background</h3>
+<p>Sometimes, after League of Legends client is closed, its process is still
+running in the background. The easiest way to kill it is to open
+<strong>PlayOnLinux</strong>, click on <strong>Configure</strong>, select <strong>League of Legends</strong>, <strong>Wine</strong>
+tab and click on <strong>Kill processes</strong> button.</p>
+</div>
+<div class="section" id="anything-else">
+<h3>Anything else</h3>
+<p>Check one of these: <a class="reference external" href="https://appdb.winehq.org/objectManager.php?bShowAll=true&amp;bIsQueue=false&amp;bIsRejected=false&amp;sClass=version&amp;sTitle=&amp;sReturnTo=&amp;iId=31794">WineHQ</a>, <a class="reference external" href="https://www.google.cz/search?q=league+of+legends+linux">Google</a> with you specific problem or leave a
+comment below.</p>
+</div>
+</div>
+
+    </div>
+  </article>
+</div>
+
+<div class="content row">
+  <div class="col-sm-12">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'phoracek';
+    var disqus_identifier = 'league-of-legends-on-fedora';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+</div>
+
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="col col-sm-4">
+      <strong>Categories</strong>
+      <nav>
+        <a href="//blog.phoracek.cz/category/linux.html">Linux</a><br>
+      </nav>
+      <br>
+      <strong>Tags</strong>
+      <nav>
+        <a href="//blog.phoracek.cz/tag/fedora.html">fedora</a><br>
+        <a href="//blog.phoracek.cz/tag/playonlinux.html">playonlinux</a><br>
+        <a href="//blog.phoracek.cz/tag/workenv.html">workenv</a><br>
+        <a href="//blog.phoracek.cz/tag/leagueoflegends.html">leagueoflegends</a><br>
+        <a href="//blog.phoracek.cz/tag/linux.html">linux</a><br>
+      </nav>
+    </div>
+    <div class="col col-sm-3">
+      <strong>Archive</strong>
+      <nav>
+        <a href="//blog.phoracek.cz/archive/2016.html">2016</a><br>
+        <a href="//blog.phoracek.cz/archive/2015.html">2015</a><br>
+      </nav>
+    </div>
+    <div class="col col-sm-5">
+      <p><b>Petr Horáček</b> is a guy from Czech Republic, studying at <a href="http://fi.muni.cz/">FI MUNI</a>, working in <a href="http://redhat.com">Red Hat</a> on networking part of <a href="http://www.ovirt.org/">oVirt</a>.<br>He likes programming, Linux, travelling, livecoding, music, multimedia.</p>
+      <strong>Contact</strong>
+      <p>p.horacek94 at gmail dot com<br>phoracek at irc.oftc.net #ovirt<br><a href="http://www.github.com/phoracek">www.github.com/phoracek</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="//blog.phoracek.cz/theme/js/lightbox-plus-jquery.min.js"></script>
+
+</body>
+</html>
