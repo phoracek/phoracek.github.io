@@ -1,5 +1,3 @@
-Upload output to master branch with:
+Upload `output/` to master branch with:
 
-```shell
-git subtree push --prefix output origin master
-```
+`git subtree push --prefix output origin master`
