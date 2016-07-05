@@ -55,7 +55,7 @@ ARTICLE_URL = 'articles/{category}/{slug}-{lang}.html'
 ARTICLE_LANG_URL = 'articles/{category}/{slug}-{lang}.html'
 
 YEAR_ARCHIVE_SAVE_AS = 'archive/{date:%Y}.html'
-ARCHIVES_YEARS = [2015]
+ARCHIVES_YEARS = [2016, 2015]
 
 AUTHOR_SAVE_AS = False
 AUTHORS_SAVE_AS = False
