@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content row">
+    <div class="contenttitle col-sm-12">
+        <h2>{{ period | reverse | join(' ') }}</h2>
+    </div>
+
+  {% for article in dates %}
+  <article class="blog-post-preview col-sm-12">
+    <a href="{{ SITEURL }}/{{ article.url }}"><h2 class="blog-post-header">{{ article.title }}</h2></a>
+    <div class="blog-post-meta row">
+      <div class="text-left col-sm-10"> 
+        {{ article.locale_date }}
+        &nbsp
+        {% for tag in article.tags %}
+        #{{ tag }}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="content">
+        {{ article.summary }}
+        {% if article.summary_image %}
+        <img src="{{ article.summary_image }}" class="img-rounded" />
+        {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+
+</div>
+{% endblock content %}

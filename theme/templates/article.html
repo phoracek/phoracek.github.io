@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+{% for keyword in article.keywords %}
+<meta name="keywords" contents="{{keyword}}" />
+{% endfor %}
+
+{% for description in article.description %}
+<meta name="description" contents="{{description}}" />
+{% endfor %}
+
+{% for tag in article.tags %}
+<meta name="tags" contents="{{tag}}" />
+{% endfor %}
+
+{% endblock %}
+{% block content %}
+<div class="content row">
+
+  <article class="blog-post col-sm-12">
+    <h2 class="blog-post-header">{{ article.title }}</h2>
+    <div class="blog-post-meta row">
+      <div class="text-left col-sm-10"> 
+        {{ article.locale_date }}
+        &nbsp;
+        {% for tag in article.tags %}
+        #{{ tag }}
+        {% endfor %}
+      </div>
+
+      <div class="text-right col-sm-2"> 
+        {% import 'translations.html' as translations with context %}
+        {{ translations.translations_for(article) }}
+      </div>
+    </div>
+    <div class="content">
+        {{ article.content }}
+    </div>
+  </article>
+</div>
+
+<div class="content row">
+  <div class="col-sm-12">
+    {% import 'disqus.html' as disqus with context %}
+    {{ disqus.disqus_for(article.slug) }}
+  </div>
+</div>
+
+{% endblock content %}

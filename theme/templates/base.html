@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+{% block head %}
+<title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="{{ AUTHOR }}">
+<meta name="description" content="{{ AUTHOR_DESCRIPTION_PLAIN }}">
+
+<title>{{ AUTHOR }}</title>
+
+<link href="{{ SITEURL }}/theme/css/lightbox.css" rel="stylesheet" type="text/css" />
+<link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" /> 
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+{% if FEED_ALL_ATOM %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+{% endif %}
+{% if FEED_ALL_RSS %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+{% endif %}
+{% if FEED_ATOM %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+{% endif %}
+{% if FEED_RSS %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+{% endif %}
+{% if CATEGORY_FEED_ATOM and category %}
+<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+{% endif %}
+{% if CATEGORY_FEED_RSS and category %}
+<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+{% endif %}
+{% if TAG_FEED_ATOM and tag %}
+<link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+{% endif %}
+{% if TAG_FEED_RSS and tag %}
+<link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+{% endif %}
+{% endblock head %}
+
+{% include 'analytics.html' %}
+</head>
+
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <a href="{{ SITEURL }}/">
+        <h1 class="col-xs-9">{{ SITENAME }}</h1>
+      </a>
+      <div class="col-xs-3 text-right">
+        <a href="#footer">
+          <button type="button" class="show-menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  {% block content %}
+  {% endblock %}
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="col col-sm-4">
+      <strong>Categories</strong>
+      <nav>
+        {% for cat, null in categories %}
+        <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a><br>
+        {% endfor %}
+      </nav>
+      <br>
+      <strong>Tags</strong>
+      <nav>
+        {% for tg, articles in tags %}
+        <a href="{{ SITEURL }}/{{ tg.url }}">{{ tg }}{# {{ articles|count }}#}</a><br>
+        {% endfor %}
+      </nav>
+    </div>
+    <div class="col col-sm-3">
+      <strong>Archive</strong>
+      <nav>
+        {% for year in ARCHIVES_YEARS %}
+        <a href="{{ SITEURL }}/archive/{{ year }}.html">{{ year }}</a><br>
+        {% endfor %}
+      </nav>
+    </div>
+    <div class="col col-sm-5">
+      {{ AUTHOR_DESCRIPTION }}
+      <strong>Contact</strong>
+      {{ AUTHOR_CONTACT }}
+    </div>
+  </div>
+</footer>
+
+
+<script src="{{ SITEURL }}/theme/js/lightbox-plus-jquery.min.js"></script>
+
+</body>
+</html>
