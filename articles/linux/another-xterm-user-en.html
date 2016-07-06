@@ -66,7 +66,7 @@
 <div class="content row">
 
   <article class="blog-post col-sm-12">
-    <h2 class="blog-post-header">Another XTerm user</h2>
+    <h2 class="blog-post-header">Another urxvt user</h2>
     <div class="blog-post-meta row">
       <div class="text-left col-sm-10"> 
         05. 07. 2016
@@ -80,29 +80,30 @@
       </div>
     </div>
     <div class="content">
-        <p>After a few years with <a class="reference external" href="https://wiki.gnome.org/Apps/Terminal">Gnome Terminal</a> I switched to <a class="reference external" href="http://invisible-island.net/xterm/">XTerm</a>. Why? It has
-all I need. I'm not fancy into transparent background. I don't need tabs or
-tilling in terminal emulator, <a class="reference external" href="http://i3wm.org/">i3wm</a> does that for me. All I want is a nice
-font and <a class="reference external" href="http://ethanschoonover.com/solarized">Solarized</a> Dark color palette. Only think I miss in XTerm are
-clickable URL links, but I can live without that. That's all, here's my
-<code>.Xresources</code>.</p>
+        <p><strong>Update:</strong> Thanks to a guy on <a class="reference external" href="https://www.reddit.com/r/linux/comments/4rcjbk/im_a_simple_guy_who_wants_a_simple_terminal/">reddit</a> who refered me to <a class="reference external" href="http://st.suckless.org/">st</a> homepage which
+mentions funny <a class="reference external" href="https://raw.githubusercontent.com/tkztmk/xterm/master/README">XTerm's README</a>, I switched to <a class="reference external" href="http://software.schmorp.de/pkg/rxvt-unicode.html">urxvt</a>. It gives me better
+feeling and requires only minimal changes in configuration.</p>
+<p>After a few years with <a class="reference external" href="https://wiki.gnome.org/Apps/Terminal">Gnome Terminal</a> I switched to <span class="strike">XTerm</span>.
+<a class="reference external" href="http://software.schmorp.de/pkg/rxvt-unicode.html">urxvt</a> Why?  It has all I need. I'm not fancy into transparent background. I
+don't need tabs or tilling in terminal emulator, <a class="reference external" href="http://i3wm.org/">i3wm</a> does that for me. All
+I want is a nice font and <a class="reference external" href="http://ethanschoonover.com/solarized">Solarized</a> Dark color palette. <span class="strike">Only thing
+I miss in XTerm are clickable URL links, but I can live without that.</span> That's
+all, here's my <code>.Xresources</code>.</p>
 <a data-lightbox="image" href="/images/xterm.png" title="XTerm appearance"><img alt="XTerm appearance" class="lb-image" src="/images/xterm.png" style="width: 648px;"/></a>
 <p>If you don't know how to use it, take a look at <a class="reference external" href="https://wiki.archlinux.org/index.php/X_resources#Parsing_.Xresources">Arch Linux wiki</a>.</p>
 <div class="highlight"><pre>!! Font
-XTerm*faceName: Droid Sans Mono
-XTerm*faceSize: 10
+URxvt*font:xft:Droid Sans Mono:pixelsize=13
 
 !! Appearance
-XTerm*scrollBar: false
-XTerm*borderWidth: 0
+URxvt*scrollBar: false
 
 !! Misc
-! Copy selected text to system-wide clipboard
-XTerm*selectToClipboard: true
-! On 4 mouse clicks select the whole terminal history
-XTerm*on4Clicks: all
 ! Keep last 10000 lines
-XTerm*saveLines: 10000
+URxvt*saveLines: 10000
+! Make URL links clickable
+URxvt*perl-ext-common: default,matcher
+URxvt*matcher.button: 1
+URxvt*url-launcher: /usr/bin/xdg-open
 
 
 !! Solarized dark via https://github.com/solarized/xresources
@@ -115,12 +116,12 @@ XTerm*saveLines: 10000
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
 
-*background:            S_base03
-*foreground:            S_base0
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
+URxvt*background:            S_base03
+URxvt*foreground:            S_base0
+URxvt*fadeColor:             S_base03
+URxvt*cursorColor:           S_base1
+URxvt*pointerColorBackground:S_base01
+URxvt*pointerColorForeground:S_base1
 
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
@@ -132,36 +133,36 @@ XTerm*saveLines: 10000
 #define S_green         #859900
 
 !! black dark/light
-*color0:                S_base02
-*color8:                S_base03
+URxvt*color0:                S_base02
+URxvt*color8:                S_base03
 
 !! red dark/light
-*color1:                S_red
-*color9:                S_orange
+URxvt*color1:                S_red
+URxvt*color9:                S_orange
 
 !! green dark/light
-*color2:                S_green
-*color10:               S_base01
+URxvt*color2:                S_green
+URxvt*color10:               S_base01
 
 !! yellow dark/light
-*color3:                S_yellow
-*color11:               S_base00
+URxvt*color3:                S_yellow
+URxvt*color11:               S_base00
 
 !! blue dark/light
-*color4:                S_blue
-*color12:               S_base0
+URxvt*color4:                S_blue
+URxvt*color12:               S_base0
 
 !! magenta dark/light
-*color5:                S_magenta
-*color13:               S_violet
+URxvt*color5:                S_magenta
+URxvt*color13:               S_violet
 
 !! cyan dark/light
-*color6:                S_cyan
-*color14:               S_base1
+URxvt*color6:                S_cyan
+URxvt*color14:               S_base1
 
 !! white dark/light
-*color7:                S_base2
-*color15: S_base3
+URxvt*color7:                S_base2
+URxvt*color15: S_base3
 </pre></div>
 
     </div>

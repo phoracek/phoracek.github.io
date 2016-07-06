@@ -12,6 +12,10 @@ h2 {
   font-weight: bold;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 .container {
   max-width: 780px;
   width: auto;
