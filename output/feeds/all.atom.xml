@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Petr Horáček · blog</title><link href="//blog.phoracek.cz/" rel="alternate"></link><link href="//blog.phoracek.cz/feeds/all.atom.xml" rel="self"></link><id>//blog.phoracek.cz/</id><updated>2016-07-05T00:00:00+02:00</updated><entry><title>Another XTerm user</title><link href="//blog.phoracek.cz/articles/linux/another-xterm-user-en.html" rel="alternate"></link><published>2016-07-05T00:00:00+02:00</published><author><name>Petr Horáček</name></author><id>tag:blog.phoracek.cz,2016-07-05:articles/linux/another-xterm-user-en.html</id><summary type="html">&lt;p&gt;After a few years with &lt;a class="reference external" href="https://wiki.gnome.org/Apps/Terminal"&gt;Gnome Terminal&lt;/a&gt; I switched to &lt;a class="reference external" href="http://invisible-island.net/xterm/"&gt;XTerm&lt;/a&gt;. Why? It has
-all I need. I'm not fancy into transparent background. I don't need tabs or
-tilling in terminal emulator, &lt;a class="reference external" href="http://i3wm.org/"&gt;i3wm&lt;/a&gt; does that for me. All I want is a nice
-font and &lt;a class="reference external" href="http://ethanschoonover.com/solarized"&gt;Solarized&lt;/a&gt; Dark color palette. Only think I miss in XTerm are
-clickable URL links, but I can live without that. That's all, here's my
-&lt;code&gt;.Xresources&lt;/code&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Petr Horáček · blog</title><link href="//blog.phoracek.cz/" rel="alternate"></link><link href="//blog.phoracek.cz/feeds/all.atom.xml" rel="self"></link><id>//blog.phoracek.cz/</id><updated>2016-07-05T00:00:00+02:00</updated><entry><title>Another urxvt user</title><link href="//blog.phoracek.cz/articles/linux/another-xterm-user-en.html" rel="alternate"></link><published>2016-07-05T00:00:00+02:00</published><author><name>Petr Horáček</name></author><id>tag:blog.phoracek.cz,2016-07-05:articles/linux/another-xterm-user-en.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Thanks to a guy on &lt;a class="reference external" href="https://www.reddit.com/r/linux/comments/4rcjbk/im_a_simple_guy_who_wants_a_simple_terminal/"&gt;reddit&lt;/a&gt; who refered me to &lt;a class="reference external" href="http://st.suckless.org/"&gt;st&lt;/a&gt; homepage which
+mentions funny &lt;a class="reference external" href="https://raw.githubusercontent.com/tkztmk/xterm/master/README"&gt;XTerm's README&lt;/a&gt;, I switched to &lt;a class="reference external" href="http://software.schmorp.de/pkg/rxvt-unicode.html"&gt;urxvt&lt;/a&gt;. It gives me better
+feeling and requires only minimal changes in configuration.&lt;/p&gt;
+&lt;p&gt;After a few years with &lt;a class="reference external" href="https://wiki.gnome.org/Apps/Terminal"&gt;Gnome Terminal&lt;/a&gt; I switched to &lt;span class="strike"&gt;XTerm&lt;/span&gt;.
+&lt;a class="reference external" href="http://software.schmorp.de/pkg/rxvt-unicode.html"&gt;urxvt&lt;/a&gt; Why?  It has all I need. I'm not fancy into transparent background. I
+don't need tabs or tilling in terminal emulator, &lt;a class="reference external" href="http://i3wm.org/"&gt;i3wm&lt;/a&gt; does that for me. All
+I want is a nice font and &lt;a class="reference external" href="http://ethanschoonover.com/solarized"&gt;Solarized&lt;/a&gt; Dark color palette. &lt;span class="strike"&gt;Only thing
+I miss in XTerm are clickable URL links, but I can live without that.&lt;/span&gt; That's
+all, here's my &lt;code&gt;.Xresources&lt;/code&gt;.&lt;/p&gt;
 &lt;a data-lightbox="image" href="/images/xterm.png" title="XTerm appearance"&gt;&lt;img alt="XTerm appearance" class="lb-image" src="/images/xterm.png" style="width: 648px;"/&gt;&lt;/a&gt;
 &lt;p&gt;If you don't know how to use it, take a look at &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/X_resources#Parsing_.Xresources"&gt;Arch Linux wiki&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;!! Font
-XTerm*faceName: Droid Sans Mono
-XTerm*faceSize: 10
+URxvt*font:xft:Droid Sans Mono:pixelsize=13
 
 !! Appearance
-XTerm*scrollBar: false
-XTerm*borderWidth: 0
+URxvt*scrollBar: false
 
 !! Misc
-! Copy selected text to system-wide clipboard
-XTerm*selectToClipboard: true
-! On 4 mouse clicks select the whole terminal history
-XTerm*on4Clicks: all
 ! Keep last 10000 lines
-XTerm*saveLines: 10000
+URxvt*saveLines: 10000
+! Make URL links clickable
+URxvt*perl-ext-common: default,matcher
+URxvt*matcher.button: 1
+URxvt*url-launcher: /usr/bin/xdg-open
 
 
 !! Solarized dark via https://github.com/solarized/xresources
@@ -34,12 +35,12 @@ XTerm*saveLines: 10000
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
 
-*background:            S_base03
-*foreground:            S_base0
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
+URxvt*background:            S_base03
+URxvt*foreground:            S_base0
+URxvt*fadeColor:             S_base03
+URxvt*cursorColor:           S_base1
+URxvt*pointerColorBackground:S_base01
+URxvt*pointerColorForeground:S_base1
 
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
@@ -51,36 +52,36 @@ XTerm*saveLines: 10000
 #define S_green         #859900
 
 !! black dark/light
-*color0:                S_base02
-*color8:                S_base03
+URxvt*color0:                S_base02
+URxvt*color8:                S_base03
 
 !! red dark/light
-*color1:                S_red
-*color9:                S_orange
+URxvt*color1:                S_red
+URxvt*color9:                S_orange
 
 !! green dark/light
-*color2:                S_green
-*color10:               S_base01
+URxvt*color2:                S_green
+URxvt*color10:               S_base01
 
 !! yellow dark/light
-*color3:                S_yellow
-*color11:               S_base00
+URxvt*color3:                S_yellow
+URxvt*color11:               S_base00
 
 !! blue dark/light
-*color4:                S_blue
-*color12:               S_base0
+URxvt*color4:                S_blue
+URxvt*color12:               S_base0
 
 !! magenta dark/light
-*color5:                S_magenta
-*color13:               S_violet
+URxvt*color5:                S_magenta
+URxvt*color13:               S_violet
 
 !! cyan dark/light
-*color6:                S_cyan
-*color14:               S_base1
+URxvt*color6:                S_cyan
+URxvt*color14:               S_base1
 
 !! white dark/light
-*color7:                S_base2
-*color15: S_base3
+URxvt*color7:                S_base2
+URxvt*color15: S_base3
 &lt;/pre&gt;&lt;/div&gt;
 </summary><category term="linux"></category><category term="workenv"></category></entry><entry><title>Play League of Legends on Fedora</title><link href="//blog.phoracek.cz/articles/linux/league-of-legends-on-fedora-en.html" rel="alternate"></link><published>2015-10-15T00:00:00+02:00</published><author><name>Petr Horáček</name></author><id>tag:blog.phoracek.cz,2015-10-15:articles/linux/league-of-legends-on-fedora-en.html</id><summary type="html">&lt;p&gt;Play &lt;strong&gt;League of Legends&lt;/strong&gt; on &lt;strong&gt;Fedora 22&lt;/strong&gt; via PlayOnLinux. It requires a few
 extra installation steps, but then everything works like a charm. This guide
