@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Petr Horáček · blog</title><link href="//blog.phoracek.cz/" rel="alternate"></link><link href="//blog.phoracek.cz/feeds/linux.atom.xml" rel="self"></link><id>//blog.phoracek.cz/</id><updated>2016-07-05T00:00:00+02:00</updated><entry><title>Another urxvt user</title><link href="//blog.phoracek.cz/articles/linux/another-xterm-user-en.html" rel="alternate"></link><published>2016-07-05T00:00:00+02:00</published><author><name>Petr Horáček</name></author><id>tag:blog.phoracek.cz,2016-07-05:articles/linux/another-xterm-user-en.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Thanks to a guy on &lt;a class="reference external" href="https://www.reddit.com/r/linux/comments/4rcjbk/im_a_simple_guy_who_wants_a_simple_terminal/"&gt;reddit&lt;/a&gt; who refered me to &lt;a class="reference external" href="http://st.suckless.org/"&gt;st&lt;/a&gt; homepage which
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Petr Horáček · blog</title><link href="//blog.phoracek.cz/" rel="alternate"></link><link href="//blog.phoracek.cz/feeds/linux.atom.xml" rel="self"></link><id>//blog.phoracek.cz/</id><updated>2016-07-05T00:00:00+02:00</updated><entry><title>Another urxvt user</title><link href="//blog.phoracek.cz/articles/linux/another-xterm-user-en.html" rel="alternate"></link><published>2016-07-05T00:00:00+02:00</published><updated>2016-07-05T00:00:00+02:00</updated><author><name>Petr Horáček</name></author><id>tag:blog.phoracek.cz,2016-07-05:articles/linux/another-xterm-user-en.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Thanks to a guy on &lt;a class="reference external" href="https://www.reddit.com/r/linux/comments/4rcjbk/im_a_simple_guy_who_wants_a_simple_terminal/"&gt;reddit&lt;/a&gt; who refered me to &lt;a class="reference external" href="http://st.suckless.org/"&gt;st&lt;/a&gt; homepage which
 mentions funny &lt;a class="reference external" href="https://raw.githubusercontent.com/tkztmk/xterm/master/README"&gt;XTerm's README&lt;/a&gt;, I switched to &lt;a class="reference external" href="http://software.schmorp.de/pkg/rxvt-unicode.html"&gt;urxvt&lt;/a&gt;. It gives me better
 feeling and requires only minimal changes in configuration.&lt;/p&gt;
 &lt;p&gt;After a few years with &lt;a class="reference external" href="https://wiki.gnome.org/Apps/Terminal"&gt;Gnome Terminal&lt;/a&gt; I switched to &lt;span class="strike"&gt;XTerm&lt;/span&gt;.
@@ -10,7 +10,7 @@ I miss in XTerm are clickable URL links, but I can live without that.&lt;/span&g
 all, here's my &lt;code&gt;.Xresources&lt;/code&gt;.&lt;/p&gt;
 &lt;a data-lightbox="image" href="/images/xterm.png" title="XTerm appearance"&gt;&lt;img alt="XTerm appearance" class="lb-image" src="/images/xterm.png" style="width: 648px;"/&gt;&lt;/a&gt;
 &lt;p&gt;If you don't know how to use it, take a look at &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/X_resources#Parsing_.Xresources"&gt;Arch Linux wiki&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;!! Font
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;!! Font
 URxvt*font:xft:Droid Sans Mono:pixelsize=13
 
 !! Appearance
@@ -83,7 +83,7 @@ URxvt*color14:               S_base1
 URxvt*color7:                S_base2
 URxvt*color15: S_base3
 &lt;/pre&gt;&lt;/div&gt;
-</summary><category term="linux"></category><category term="workenv"></category></entry><entry><title>Play League of Legends on Fedora</title><link href="//blog.phoracek.cz/articles/linux/league-of-legends-on-fedora-en.html" rel="alternate"></link><published>2015-10-15T00:00:00+02:00</published><author><name>Petr Horáček</name></author><id>tag:blog.phoracek.cz,2015-10-15:articles/linux/league-of-legends-on-fedora-en.html</id><summary type="html">&lt;p&gt;Play &lt;strong&gt;League of Legends&lt;/strong&gt; on &lt;strong&gt;Fedora 22&lt;/strong&gt; via PlayOnLinux. It requires a few
+</summary><category term="linux"></category><category term="workenv"></category></entry><entry><title>Play League of Legends on Fedora</title><link href="//blog.phoracek.cz/articles/linux/league-of-legends-on-fedora-en.html" rel="alternate"></link><published>2015-10-15T00:00:00+02:00</published><updated>2015-10-15T00:00:00+02:00</updated><author><name>Petr Horáček</name></author><id>tag:blog.phoracek.cz,2015-10-15:articles/linux/league-of-legends-on-fedora-en.html</id><summary type="html">&lt;p&gt;Play &lt;strong&gt;League of Legends&lt;/strong&gt; on &lt;strong&gt;Fedora 22&lt;/strong&gt; via PlayOnLinux. It requires a few
 extra installation steps, but then everything works like a charm. This guide
 describes installation and troubleshooting of common problems.&lt;/p&gt;
 &lt;p&gt;Following steps were tested on a blank Fedora 22 virtual machine. It's
@@ -102,12 +102,12 @@ you, please let me know.&lt;/p&gt;
 &lt;div class="section" id="step-by-step"&gt;
 &lt;h2&gt;Step by step&lt;/h2&gt;
 &lt;p&gt;Install &lt;a class="reference external" href="https://www.playonlinux.com/en/"&gt;PlayOnLinux&lt;/a&gt; from its repository.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;dnf install http://rpm.playonlinux.com/playonlinux-yum-4-1.noarch.rpm
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dnf install http://rpm.playonlinux.com/playonlinux-yum-4-1.noarch.rpm
 dnf install playonlinux
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Install 32bit packages (not all of them are needed, but I was too lazy to test
 which ones are).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;dnf install glibc.i686 arts.i686 audiofile.i686 bzip2-libs.i686 &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dnf install glibc.i686 arts.i686 audiofile.i686 bzip2-libs.i686 &lt;span class="se"&gt;\&lt;/span&gt;
 cairo.i686 cyrus-sasl-lib.i686 dbus-libs.i686 esound-libs.i686 fltk.i686 &lt;span class="se"&gt;\&lt;/span&gt;
 freeglut.i686 gtk2.i686 imlib.i686 lcms-libs.i686 lesstif.i686 &lt;span class="se"&gt;\&lt;/span&gt;
 libacl.i686 libao.i686 libattr.i686 libcap.i686 libdrm.i686 libexif.i686 &lt;span class="se"&gt;\&lt;/span&gt;
@@ -128,7 +128,7 @@ alsa-plugins-pulseaudio.i686
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;libtxc_dxtn&lt;/code&gt; lib solves loading screen crash problem. Install it from
 &lt;a class="reference external" href="http://rpmfusion.org/"&gt;RPM Fusion&lt;/a&gt; repository.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;dnf install http://download1.rpmfusion.org/free/fedora/releases/22/Everything/x86_64/os/rpmfusion-free-release-22-1.noarch.rpm
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dnf install http://download1.rpmfusion.org/free/fedora/releases/22/Everything/x86_64/os/rpmfusion-free-release-22-1.noarch.rpm
 dnf install libtxc_dxtn.i686
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now launch &lt;strong&gt;PlayOnLinux&lt;/strong&gt;, add a new game (&lt;strong&gt;File → Install&lt;/strong&gt;), search for
@@ -150,7 +150,7 @@ client related and will not influence your in-game experience.&lt;/p&gt;
 &lt;p&gt;It may seem like the installation stuck, but it's probably just copying loads
 of data, it can take an hour or two. If you need to see some action, read
 patcher log files:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/.PlayOnLinux/wineprefix/LeagueOfLegends/drive_c/Riot&lt;span class="se"&gt;\ &lt;/span&gt;Games/League&lt;span class="se"&gt;\ &lt;/span&gt;of&lt;span class="se"&gt;\ &lt;/span&gt;Legends/Logs/Patcher&lt;span class="se"&gt;\ &lt;/span&gt;Logs
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/.PlayOnLinux/wineprefix/LeagueOfLegends/drive_c/Riot&lt;span class="se"&gt;\ &lt;/span&gt;Games/League&lt;span class="se"&gt;\ &lt;/span&gt;of&lt;span class="se"&gt;\ &lt;/span&gt;Legends/Logs/Patcher&lt;span class="se"&gt;\ &lt;/span&gt;Logs
 tail -f *_LoLPatcher.log
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
