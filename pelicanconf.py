@@ -4,16 +4,6 @@ from __future__ import unicode_literals
 SITENAME = u'Petr Horáček &middot; blog'
 SITEURL = '/'
 AUTHOR = u'Petr Horáček'
-AUTHOR_DESCRIPTION = (
-    u'<p><b>Petr Horáček</b> is a guy from Czech Republic, studying at '
-    '<a href="http://fi.muni.cz/">FI MUNI</a>, working in '
-    '<a href="http://redhat.com">Red Hat</a> on networking part of '
-    '<a href="http://www.ovirt.org/">oVirt</a>.<br>He likes programming, '
-    'Linux, travelling, livecoding, music, multimedia.</p>')
-AUTHOR_DESCRIPTION_PLAIN = (
-    u'Petr Horáček is a guy from Czech Republic, studying at FI MUNI, working '
-    'in Red Hat on networking part of oVirt. He likes programming, Linux, '
-    'travelling, livecoding, music, multimedia.')
 AUTHOR_CONTACT = (u'<p>p.horacek94 at gmail dot com<br>'
                   'phoracek at irc.oftc.net #ovirt<br>'
                   '<a href="http://www.github.com/phoracek">'
