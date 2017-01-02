@@ -5,7 +5,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Petr Horáček">
-<meta name="description" content="Petr Horáček is a guy from Czech Republic, studying at FI MUNI, working in Red Hat on networking part of oVirt. He likes programming, Linux, travelling, livecoding, music, multimedia.">
 
 <title>Petr Horáček</title>
 
@@ -103,12 +102,12 @@ you, please let me know.</p>
 <div class="section" id="step-by-step">
 <h2>Step by step</h2>
 <p>Install <a class="reference external" href="https://www.playonlinux.com/en/">PlayOnLinux</a> from its repository.</p>
-<div class="highlight"><pre>dnf install http://rpm.playonlinux.com/playonlinux-yum-4-1.noarch.rpm
+<div class="highlight"><pre><span></span>dnf install http://rpm.playonlinux.com/playonlinux-yum-4-1.noarch.rpm
 dnf install playonlinux
 </pre></div>
 <p>Install 32bit packages (not all of them are needed, but I was too lazy to test
 which ones are).</p>
-<div class="highlight"><pre>dnf install glibc.i686 arts.i686 audiofile.i686 bzip2-libs.i686 <span class="se">\</span>
+<div class="highlight"><pre><span></span>dnf install glibc.i686 arts.i686 audiofile.i686 bzip2-libs.i686 <span class="se">\</span>
 cairo.i686 cyrus-sasl-lib.i686 dbus-libs.i686 esound-libs.i686 fltk.i686 <span class="se">\</span>
 freeglut.i686 gtk2.i686 imlib.i686 lcms-libs.i686 lesstif.i686 <span class="se">\</span>
 libacl.i686 libao.i686 libattr.i686 libcap.i686 libdrm.i686 libexif.i686 <span class="se">\</span>
@@ -129,7 +128,7 @@ alsa-plugins-pulseaudio.i686
 </pre></div>
 <p><code>libtxc_dxtn</code> lib solves loading screen crash problem. Install it from
 <a class="reference external" href="http://rpmfusion.org/">RPM Fusion</a> repository.</p>
-<div class="highlight"><pre>dnf install http://download1.rpmfusion.org/free/fedora/releases/22/Everything/x86_64/os/rpmfusion-free-release-22-1.noarch.rpm
+<div class="highlight"><pre><span></span>dnf install http://download1.rpmfusion.org/free/fedora/releases/22/Everything/x86_64/os/rpmfusion-free-release-22-1.noarch.rpm
 dnf install libtxc_dxtn.i686
 </pre></div>
 <p>Now launch <strong>PlayOnLinux</strong>, add a new game (<strong>File → Install</strong>), search for
@@ -151,7 +150,7 @@ client related and will not influence your in-game experience.</p>
 <p>It may seem like the installation stuck, but it's probably just copying loads
 of data, it can take an hour or two. If you need to see some action, read
 patcher log files:</p>
-<div class="highlight"><pre><span class="nb">cd</span> ~/.PlayOnLinux/wineprefix/LeagueOfLegends/drive_c/Riot<span class="se">\ </span>Games/League<span class="se">\ </span>of<span class="se">\ </span>Legends/Logs/Patcher<span class="se">\ </span>Logs
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/.PlayOnLinux/wineprefix/LeagueOfLegends/drive_c/Riot<span class="se">\ </span>Games/League<span class="se">\ </span>of<span class="se">\ </span>Legends/Logs/Patcher<span class="se">\ </span>Logs
 tail -f *_LoLPatcher.log
 </pre></div>
 </div>
@@ -234,7 +233,6 @@ comment below.</p>
       </nav>
     </div>
     <div class="col col-sm-5">
-      <p><b>Petr Horáček</b> is a guy from Czech Republic, studying at <a href="http://fi.muni.cz/">FI MUNI</a>, working in <a href="http://redhat.com">Red Hat</a> on networking part of <a href="http://www.ovirt.org/">oVirt</a>.<br>He likes programming, Linux, travelling, livecoding, music, multimedia.</p>
       <strong>Contact</strong>
       <p>p.horacek94 at gmail dot com<br>phoracek at irc.oftc.net #ovirt<br><a href="http://www.github.com/phoracek">www.github.com/phoracek</a></p>
     </div>
