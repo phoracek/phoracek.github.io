@@ -20,7 +20,7 @@ it as a git submodule:
 
 ```
 $ cd themes/
-$ git submodule add https://git.figbert.com/FIGBERT/d3c3nt.git
+$ git submodule add git://git.figbert.com/d3c3nt.git
 ```
 
 After installing the theme, set the top-level `theme` variable to
