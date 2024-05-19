@@ -1,16 +1,13 @@
-# The URL the site will be built for
 base_url = "https://phoracek.github.io"
-
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
+compile_sass = false
 build_search_index = false
+theme = "d3c3nt"
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+d3_nav = [
+  { name = "about", path = "/" },
+  { name = "posts", path = "/posts/" }
+]
