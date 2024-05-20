@@ -162,7 +162,7 @@ kbd {
 /* Highlights */
 mark {
   padding: 0.15rem;
-  background-color: var(--tertiary-color);
+  background-color: #ffe991;
 }
 
 /* Posts and Projects */
