@@ -5,6 +5,7 @@ theme = "d3c3nt"
 
 [markdown]
 highlight_code = true
+highlight_theme = "1337"
 
 [extra]
 d3_nav = [
