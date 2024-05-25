@@ -127,10 +127,11 @@ blockquote {
 table {
   border-collapse: collapse;
   width: 100%;
+  margin: 0 0 20px 0;
 }
 
 thead {
-  background-color: var(--tertiary-color);
+  background-color: var(--secondary-color);
 }
 
 td, th {
