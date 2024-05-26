@@ -31,7 +31,7 @@ could be connected elsewhere, but there is no other SPI exposed on the board.
 
 # Controlling the display
 
-I recommend reading the [Programming Sharp’s Memory LCDs datasheet](https://www.sharpsde.com/fileadmin/products/Displays/2016_SDE_App_Note_for_Memory_LCD_programming_V1.3.pdf),
+I recommend reading the [Programming Sharp’s Memory LCDs application note](datasheetdatasheethttps://www.sharpsde.com/fileadmin/products/Displays/2016_SDE_App_Note_for_Memory_LCD_programming_V1.3.pdf),
 it is a fairly simple read. Pay attention to the explanation of VCOM.
 
 If you want to understand more, compare the datasheet with the sources of the
@@ -134,4 +134,4 @@ powered.
 
 # Other resources
 
-* [Issue on the Rust display driver discussing the SPI speed](https://todo.sr.ht/~doesnotcompete/sharp-memory-display/4)
+* [Display Datasheet](https://cdn-learn.adafruit.com/assets/assets/000/094/215/original/LS027B7DH01_Rev_Jun_2010.pdf)
