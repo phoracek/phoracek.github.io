@@ -61,9 +61,9 @@ fn main() -> ! {
     defmt::info!("Entering idle loop, refreshing the display");
 
     loop {
-        display.flush_buffer();
+        display.display_mode();
 
         led.toggle();
-        asm::delay(480_000_000);
+        asm::delay(240_000_000);
     }
 }

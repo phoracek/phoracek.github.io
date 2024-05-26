@@ -110,22 +110,24 @@ Text::with_alignment(
 .unwrap();
 ```
 
-Finally, since the display is running in the VCOM mode, an update (even with no
-actual changes) must be sent regularly. In this example, it is set every second.
-On board LED is toggled to signalize that the program is still running:
+Finally, since the display is running in the software clock VCOM mode, an update
+(even with no actual changes) must be sent at least once a second. In this
+example, it is set every half a second. On board LED is toggled to signalize that the
+program is still running:
 
 ```rust
 loop {
-    display.flush_buffer();
+    display.display_mode();
     led.toggle();
-    asm::delay(480_000_000);
+    asm::delay(480_000_000 / 2);
 }
 ```
 
 This is not perfect, since stopping the program without disabling the display
 may result in display burn-in. It would be probably better to use the display
-in EXTMODE and supply the tick using a 555 chip. Or implementing a panic hanlder
-that would call `disable()` on the display to shut it down nicely.
+in external clock mode and supply the tick using a 555 chip. Or implementing
+a panic handler that would call `disable()` on the display to shut it down
+nicely.
 
 If you use this code, make sure the program always runs when the display is
 powered.
